@@ -1,0 +1,32 @@
+{
+  "0": {
+    "dataVolume": "extensive",
+    "dataQuality": "good",
+    "dataSensitivity": "high",
+    "accuracyTolerance": "average"
+  },
+  "1": {
+    "dataVolume": "large",
+    "dataQuality": "good",
+    "dataSensitivity": "good",
+    "accuracyTolerance": "good"
+  },
+  "2": {
+    "dataVolume": "extensive",
+    "dataQuality": "good",
+    "dataSensitivity": "good",
+    "accuracyTolerance": "good"
+  },
+  "3": {
+    "dataVolume": "extensive",
+    "dataQuality": "high",
+    "dataSensitivity": "high",
+    "accuracyTolerance": "good"
+  },
+  "4": {
+    "dataVolume": "large",
+    "dataQuality": "good",
+    "dataSensitivity": "good",
+    "accuracyTolerance": "good"
+  }
+}
