@@ -20,6 +20,13 @@ marketing-stategies
     pip install -r requirements.txt
     uvicorn main:app --reload
 
+### Frontend Setup
+
+    Clone the repository:
+    cd frontend
+    npm install
+    npm start
+
 ### Folder structure
 /project-root
     |-- /backend
