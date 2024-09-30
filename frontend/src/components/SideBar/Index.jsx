@@ -61,12 +61,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
-          <img src={Mori} alt="Logo" width="100px" className="filter brightness-0 invert" />
-          {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
-            <text x="10" y="80" font-family="Arial Black, Helvetica, sans-serif" font-size="80" font-weight="900" fill="#FFF">
-              mori
-            </text>
-          </svg> */}
+          {/* <img src={Mori} alt="Logo" width="100px" className="filter brightness-0 invert" /> */}
         </NavLink>
 
         <button
