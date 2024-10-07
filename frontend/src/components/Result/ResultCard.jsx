@@ -1,7 +1,7 @@
 import React from "react";
-import { Calendar, Eye, Shield, Sliders, AlertTriangle , LayoutTemplate, Repeat, MessageSquare} from 'lucide-react';
+import { Calendar, Eye, Shield, Sliders, AlertTriangle , LayoutTemplate, Repeat, MessageSquare, CheckCircle} from 'lucide-react';
 
-function ResultCard({ currentArea, step }) {
+function ResultCard({ currentArea, step, isSelected=false, onSelect=()=>{} }) {
   
   const riskColor = (rating) => {
     const colors = [
@@ -15,7 +15,17 @@ function ResultCard({ currentArea, step }) {
   };
 
   return (
-    <div className="mb-6 rounded-xl shadow-lg overflow-hidden">
+    <div 
+      className={`mb-6 rounded-xl shadow-lg overflow-hidden relative ${isSelected ? 'ring-2 ring-primary' : ''}`}
+      onClick={() => onSelect(currentArea.name)}
+    >
+      {/* Selection indicator */}
+      {step >2 && <div className="absolute top-6 right-6 z-10">
+        <CheckCircle 
+          className={`w-6 h-6 ${isSelected ? 'text-green-300 ' : 'text-light-gray'}`} 
+          fill={isSelected ? "green-400" : "transparent"}
+        />
+      </div>}
       {/* Header */}
       <div className="p-4 bg-primary">
         <div className="flex items-center">
@@ -55,7 +65,7 @@ function ResultCard({ currentArea, step }) {
                 </h4>
                 <span className="px-2 py-1 bg-primary text-light-gray rounded-full text-xs">
                   <Calendar className="w-3 h-3 inline mr-1" />
-                  {currentArea.horizon.period} (H{currentArea.horizon.number})
+                  {currentArea.horizon.period}
                 </span>
               </div>
             </div>

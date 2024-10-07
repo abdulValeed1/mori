@@ -2,7 +2,7 @@
     {
       "name": "Operational Efficiency",
       "applicationTypes": ["Process Automation", "Resource Optimization", "Predictive Maintenance"],
-      "horizon": { "period": "FY25", "number": 1 },
+      "horizon": { "period": "Everyday Use", "number": 1 },
       "infoExposure": "Internal",
       "dataSensitivity": "Medium",
       "complexityOfUsage": "Moderate",
@@ -15,7 +15,7 @@
     {
       "name": "Customer Value",
       "applicationTypes": ["Personalization", "Chatbots", "Recommendation Systems"],
-      "horizon": { "period": "FY26", "number": 2 },
+      "horizon": { "period": "Augment", "number": 2 },
       "infoExposure": "External",
       "dataSensitivity": "High",
       "complexityOfUsage": "Low",
@@ -28,7 +28,7 @@
     {
       "name": "Competitive Advantage",
       "applicationTypes": ["Predictive Analytics", "AI-Powered Products", "Market Intelligence"],
-      "horizon": { "period": "FY27", "number": 3 },
+      "horizon": { "period": "Transform", "number": 3 },
       "infoExposure": "Confidential",
       "dataSensitivity": "Very High",
       "complexityOfUsage": "High",
@@ -41,7 +41,7 @@
     {
       "name": "Reporting Intelligence",
       "applicationTypes": ["Automated Reporting", "Data Visualization", "Real-time Analytics"],
-      "horizon": { "period": "FY25", "number": 1 },
+      "horizon": { "period": "Everyday Use", "number": 1 },
       "infoExposure": "Internal",
       "dataSensitivity": "Medium",
       "complexityOfUsage": "Low",
@@ -54,7 +54,7 @@
     {
       "name": "Technology Development",
       "applicationTypes": ["AI Research", "Machine Learning Integration", "AI Infrastructure"],
-      "horizon": { "period": "FY27", "number": 3 },
+      "horizon": { "period": "Transform", "number": 3 },
       "infoExposure": "Confidential",
       "dataSensitivity": "High",
       "complexityOfUsage": "Very High",

@@ -81,7 +81,6 @@ const LinkedAIValue = () => {
     if(allRecommendedResponded){
       const result = await postCall("save-suggestions", {"message": messages});
       if(result.success){
-        // handleResultValues(valueAreas)
         handleResultValues(result.data);
         setShowResult(true)
       } else {

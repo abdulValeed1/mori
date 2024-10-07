@@ -24,7 +24,6 @@ const useAxios = () => {
 
     const postCall = async (path, body = {}, headers = {}) => {
         setLoading(true);
-        console.log("body", body)
         try {
             const response = await axios.post(baseUrl+path, {"data":body}, { headers });
             return { success: true, data: response.data };

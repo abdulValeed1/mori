@@ -2,9 +2,9 @@
     {
       "title": "Operational Efficiency",
       "defaultInfo": [
-        { "icon": "📊", "title": "Type Of Use", "options": ["Everyday", "Augment", "Transform"] },
-        { "icon": "🧹", "title": "Type Of App", "options": ["Content", "Delivery", "Triage", "End to End Decisions"] },
-        { "icon": "🔒", "title": "Quadrant Mapping", "options": ["Quadrant-1", "Quadrant-2", "Quadrant-3"] }
+        { "icon": "📊", "title": "Type Of Use", "options": [{"value": "Everyday", "selected":true}, {"value": "Augment", "selected":false}, {"value": "Transform", "selected":false}] },
+        { "icon": "🧹", "title": "Type Of App", "options": [{"value": "Content", "selected":false}, {"value": "Delivery", "selected":false}, {"value": "Triage", "selected":true}] },
+        { "icon": "🔒", "title": "Quadrant Mapping", "options": [{"value": "Quadrant-1", "selected":false}, {"value": "Quadrant-2", "selected":true}, {"value": "Quadrant-3", "selected": false}] }
       ],
       "questions": [
         {
@@ -55,9 +55,9 @@
     {
         "title": "Customer value",
         "defaultInfo": [
-          { "icon": "📊", "title": "Type Of Use", "options": ["Everyday", "Augment", "Transform"] },
-          { "icon": "🧹", "title": "Type Of App", "options": ["Content", "Delivery", "Triage", "End to End Decisions"] },
-          { "icon": "🔒", "title": "Quadrant Mapping", "options": ["Quadrant-1", "Quadrant-2", "Quadrant-3"] }
+          { "icon": "📊", "title": "Type Of Use", "options": [{"value": "Everyday", "selected":true}, {"value": "Augment", "selected":false}, {"value": "Transform", "selected":false}] },
+          { "icon": "🧹", "title": "Type Of App", "options": [{"value": "Content", "selected":false}, {"value": "Delivery", "selected":false}, {"value": "Triage", "selected":true}] },
+          { "icon": "🔒", "title": "Quadrant Mapping", "options": [{"value": "Quadrant-1", "selected":false}, {"value": "Quadrant-2", "selected":true}, {"value": "Quadrant-3", "selected": false}] }
         ],
         "questions": [
           {
@@ -108,9 +108,9 @@
       {
         "title": "Competitive Advantage",
         "defaultInfo": [
-          { "icon": "📊", "title": "Type Of Use", "options": ["Everyday", "Augment", "Transform"] },
-          { "icon": "🧹", "title": "Type Of App", "options": ["Content", "Delivery", "Triage", "End to End Decisions"] },
-          { "icon": "🔒", "title": "Quadrant Mapping", "options": ["Quadrant-1", "Quadrant-2", "Quadrant-3"] }
+          { "icon": "📊", "title": "Type Of Use", "options": [{"value": "Everyday", "selected":true}, {"value": "Augment", "selected":false}, {"value": "Transform", "selected":false}] },
+          { "icon": "🧹", "title": "Type Of App", "options": [{"value": "Content", "selected":false}, {"value": "Delivery", "selected":false}, {"value": "Triage", "selected":true}] },
+          { "icon": "🔒", "title": "Quadrant Mapping", "options": [{"value": "Quadrant-1", "selected":false}, {"value": "Quadrant-2", "selected":true}, {"value": "Quadrant-3", "selected": false}] }
         ],
         "questions": [
           {
@@ -161,9 +161,9 @@
       {
         "title": "Innovation",
         "defaultInfo": [
-          { "icon": "📊", "title": "Type Of Use", "options": ["Everyday", "Augment", "Transform"] },
-          { "icon": "🧹", "title": "Type Of App", "options": ["Content", "Delivery", "Triage", "End to End Decisions"] },
-          { "icon": "🔒", "title": "Quadrant Mapping", "options": ["Quadrant-1", "Quadrant-2", "Quadrant-3"] }
+          { "icon": "📊", "title": "Type Of Use", "options": [{"value": "Everyday", "selected":true}, {"value": "Augment", "selected":false}, {"value": "Transform", "selected":false}] },
+          { "icon": "🧹", "title": "Type Of App", "options": [{"value": "Content", "selected":false}, {"value": "Delivery", "selected":false}, {"value": "Triage", "selected":true}] },
+          { "icon": "🔒", "title": "Quadrant Mapping", "options": [{"value": "Quadrant-1", "selected":false}, {"value": "Quadrant-2", "selected":true}, {"value": "Quadrant-3", "selected": false}] }
         ],
         "questions": [
           {
@@ -214,9 +214,9 @@
       {
         "title": "Market Share",
         "defaultInfo": [
-          { "icon": "📊", "title": "Type Of Use", "options": ["Everyday", "Augment", "Transform"] },
-          { "icon": "🧹", "title": "Type Of App", "options": ["Content", "Delivery", "Triage", "End to End Decisions"] },
-          { "icon": "🔒", "title": "Quadrant Mapping", "options": ["Quadrant-1", "Quadrant-2", "Quadrant-3"] }
+          { "icon": "📊", "title": "Type Of Use", "options": [{"value": "Everyday", "selected":true}, {"value": "Augment", "selected":false}, {"value": "Transform", "selected":false}] },
+          { "icon": "🧹", "title": "Type Of App", "options": [{"value": "Content", "selected":false}, {"value": "Delivery", "selected":false}, {"value": "Triage", "selected":true}] },
+          { "icon": "🔒", "title": "Quadrant Mapping", "options": [{"value": "Quadrant-1", "selected":false}, {"value": "Quadrant-2", "selected":true}, {"value": "Quadrant-3", "selected": false}] }
         ],
         "questions": [
           {

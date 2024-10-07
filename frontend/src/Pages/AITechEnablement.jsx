@@ -92,8 +92,8 @@ const AITechEnablement = () => {
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {item.options.map((option, optIndex) => (
-                        <span key={optIndex} className="bg-white px-1 py-0.5 rounded text-xs text-primary">
-                          {option}
+                        <span key={optIndex} className={`px-1 py-0.5 rounded text-xs ${ option.selected ? 'bg-primary text-light-gray' : 'text-primary bg-white'} `}>
+                          {option.value}
                         </span>
                       ))}
                     </div>

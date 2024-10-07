@@ -1,32 +1,32 @@
 {
   "0": {
     "dataVolume": "extensive",
-    "dataQuality": "good",
-    "dataSensitivity": "high",
-    "accuracyTolerance": "average"
-  },
-  "1": {
-    "dataVolume": "large",
-    "dataQuality": "good",
+    "dataQuality": "high",
     "dataSensitivity": "good",
     "accuracyTolerance": "good"
   },
-  "2": {
+  "1": {
     "dataVolume": "extensive",
     "dataQuality": "good",
     "dataSensitivity": "good",
-    "accuracyTolerance": "good"
+    "accuracyTolerance": "high"
   },
-  "3": {
+  "2": {
     "dataVolume": "extensive",
     "dataQuality": "high",
     "dataSensitivity": "high",
     "accuracyTolerance": "good"
   },
-  "4": {
-    "dataVolume": "large",
+  "3": {
+    "dataVolume": "extensive",
     "dataQuality": "good",
     "dataSensitivity": "good",
     "accuracyTolerance": "good"
+  },
+  "4": {
+    "dataVolume": "extensive",
+    "dataQuality": "high",
+    "dataSensitivity": "high",
+    "accuracyTolerance": "high"
   }
 }

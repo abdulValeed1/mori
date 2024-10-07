@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { ArrowRight, ArrowDown } from 'lucide-react';
@@ -11,11 +11,27 @@ function Result({step, resultValues}) {
     const navigate = useNavigate();
     const { getCall } = useAxios()
     // const { resultValues } = useApp();
+    const [selectedCards, setSelectedCards] = useState([]);
 
-    const generateAndDownloadPPT = async () => {
+    const handleCardSelect = (cardName) => {
+      setSelectedCards(prevSelected => {
+        if (prevSelected.includes(cardName)) {
+          return prevSelected.filter(name => name !== cardName);
+        } else {
+          return [...prevSelected, cardName];
+        }
+      });
+    };
+
+    const generateAndDownloadPPT = async (type) => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/generate-ppt",
+        console.log("selectedCards", selectedCards, type)
+        const response = await axios.post(
+          `http://localhost:8000/generate-ppt`,
+          {
+            type: type, 
+            selected_cards: selectedCards,
+          },
           {
             responseType: "blob", // Important: This tells axios to treat the response as binary data
           }
@@ -29,7 +45,7 @@ function Result({step, resultValues}) {
         // Create a link element and trigger the download
         const link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
-        link.download = "presentation.pptx";
+        link.download = type === "short" ? "short_presentation.pptx" : "presentation.pptx";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -48,13 +64,17 @@ function Result({step, resultValues}) {
 
     return (
         <div className="h-full overflow-y-auto w-full p-6 bg-gray-800 bg-opacity-30 rounded-lg backdrop-blur-sm overflow-hidden">
-          {/* <div className="h-full w-full overflow-y-auto p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl"> */}
             {
               resultValues.map((currentArea, index) => (
-                <ResultCard key={index} currentArea={currentArea} step={step} />
+                <ResultCard 
+                  key={index} 
+                  currentArea={currentArea} 
+                  step={step} 
+                  isSelected={selectedCards.includes(currentArea.name)}
+                  onSelect={handleCardSelect}
+                />
               ))
             }
-          {/* </div> */}
             {step !== 3 ? <button 
                 className={`w-full space-x-2 p-2 rounded-lg border transition duration-200 flex items-center justify-center mb-4
                     bg-white text-dusky-teal hover:bg-light-gray hover:text-primary hover:border-2 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] cursor-pointer`}
@@ -63,14 +83,30 @@ function Result({step, resultValues}) {
                 Go To the Next Step
                 <ArrowRight size={20} className="ml-2" />
             </button> : 
-            <button 
-            className={`w-full space-x-2 p-2 rounded-lg border transition duration-200 flex items-center justify-center mb-4
-                bg-white text-dusky-teal hover:bg-light-gray hover:text-primary hover:border-2 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] cursor-pointer`}
-              onClick={generateAndDownloadPPT}
-            >
-            Download
-            <ArrowDown size={20} className="ml-2" />
-        </button> }
+        <div className="flex space-x-4 mb-4">
+          <button 
+              className={`w-full p-2 rounded-lg border transition duration-200 flex items-center justify-center
+                  bg-white text-dusky-teal hover:bg-light-gray hover:text-primary 
+                  hover:border-2 hover:border-primary 
+                  hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] cursor-pointer`}
+              onClick={()=>generateAndDownloadPPT("comprehensive")}
+          >
+              Download Comprehensive Report
+              <ArrowDown size={20} className="ml-2" />
+          </button>
+      
+          <button 
+              className={`w-full p-2 rounded-lg border transition duration-200 flex items-center justify-center
+                  bg-white text-dusky-teal hover:bg-light-gray hover:text-primary 
+                  hover:border-2 hover:border-primary 
+                  hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] cursor-pointer`}
+              onClick={() => generateAndDownloadPPT("short")}
+          >
+             Download Summary Report
+              <ArrowDown size={20} className="ml-2" />
+          </button>
+        </div>
+        }
         </div>
     );
 }

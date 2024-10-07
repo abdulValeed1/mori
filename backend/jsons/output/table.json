@@ -20,7 +20,7 @@
             "title": "AI Applications Details",
             "content": [
                 {
-                    "headers": ["Name", "Information Exposure", "Data Sensitivity", "Usage Complexity", "Risk Rating"],
+                    "headers": ["Focus Area", "Information Exposure", "Data Sensitivity", "Usage Complexity", "Risk Rating"],
                     "data": [
                         ["Operational Efficiency", "Internal", "Medium", "Moderate", "2"],
                         ["Customer Value", "External", "High", "Low", "3"],
@@ -36,7 +36,7 @@
             "title": "AI Applications Opportunities",
             "content": [
                 {
-                    "headers": ["Name", "Opportunities"],
+                    "headers": ["Focus Area", "Opportunities"],
                     "data": [
                         ["Operational Efficiency", "1. Automate repetitive tasks to reduce manual labor and errors\n2. Optimize resource allocation through predictive analytics"],
                         ["Customer Value", "1. Personalize customer experiences using AI-driven insights\n2. Enhance customer support with intelligent chatbots"],
@@ -52,7 +52,7 @@
             "title": "AI Applications Implementation Suggestions",
             "content": [
                 {
-                    "headers": ["Name", "Suggested Route", "Suggested Reuse", "Reasoning"],
+                    "headers": ["Focus Area", "Suggested Route", "Suggested Reuse", "Reasoning"],
                     "data": [
                         ["Operational Efficiency", "Compose", "Existing app", "Composing AI capabilities into existing apps can quickly enhance operational efficiency without significant disruption to current processes."],
                         ["Customer Value", "Build", "New app", "Building a new AI-powered application can provide tailored solutions for enhancing customer value, ensuring a seamless integration of personalization and recommendation features."],

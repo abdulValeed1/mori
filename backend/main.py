@@ -2,7 +2,7 @@ import io
 import os
 import json
 from typing import Dict, Tuple
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, validator
@@ -240,9 +240,40 @@ def read_from_json(path: str, filename: str) -> Tuple[Dict, int, str]:
     except Exception as e:
         return {}, 500, f"Error reading file: {str(e)}"
 
+def filter_slides(slides, selected_cards):
+    filtered_slides = []
+
+    for slide in slides:
+        filtered_content = []
+        for content in slide["content"]:
+            filtered_data = [
+                row for row in content["data"]
+                if row[0] in selected_cards
+            ]
+
+            if filtered_data:
+                filtered_content.append({
+                    "headers": content["headers"],
+                    "data": filtered_data,
+                    "type": content["type"]
+                })
+
+        if filtered_content:
+            filtered_slides.append({
+                "title": slide["title"],
+                "content": filtered_content
+            })
+
+    return {"slides": filtered_slides}
+
+
 # Pydantic model for request body
 class DataModel(BaseModel):
     data: dict
+
+class GeneratePPTRequest(BaseModel):
+    type: str  
+    selected_cards: List[str] 
 
 @app.post("/save-business-context")
 async def save_business_context(data: DataModel):
@@ -281,15 +312,25 @@ async def save_business_context(data: DataModel):
         raise HTTPException(status_code=status_code, detail=error_message)
     return suggestion_output
 
-@app.get("/generate-ppt")
-async def generate_ppt():
-    json_data, status_code, error_message = read_from_json("./jsons/output/", "table.json")
+@app.post("/generate-ppt")
+async def generate_ppt(request: GeneratePPTRequest):
+    # json_data, status_code, error_message = read_from_json("./jsons/output/", "short_table.json")
+    if request.type.lower() not in ["short", "comprehensive"]:
+        raise HTTPException(status_code=400, detail="Invalid type. Use 'short' or 'comprehensive'.")
+    
+    json_file = "short_table.json" if request.type == "short" else "table.json"
+    filename = "short_presentation.pptx" if request.type == "short" else "presentation.pptx"
+
+    json_data, status_code, error_message = read_from_json("./jsons/output/", json_file)
+
+    # Filter slides
+    filtered_json_data = filter_slides(json_data.get("slides", []), request.selected_cards)
 
     if status_code != 200:
         raise HTTPException(status_code=status_code, detail=error_message)
     
     try:
-        presentation_data = PresentationData(**json_data)
+        presentation_data = PresentationData(**filtered_json_data)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=f"Invalid JSON structure: {str(e)}")
 
@@ -304,7 +345,7 @@ async def generate_ppt():
     return StreamingResponse(
         ppt_io,
         media_type="application/vnd.openxmlformats-officedocument.presentationml.presentation",
-        headers={"Content-Disposition": "attachment; filename=presentation.pptx"}
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
     )
 
 if __name__ == "__main__":
