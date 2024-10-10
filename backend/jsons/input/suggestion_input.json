@@ -1,7 +1,7 @@
 {
   "message": [
     {
-      "id": "1728043688649",
+      "id": "1728542468703",
       "text": "Could you please provide a few examples of implementing operational efficiency?",
       "isBot": true,
       "examples": [
@@ -16,7 +16,7 @@
       "isBot": false
     },
     {
-      "id": "1728043701329",
+      "id": "1728542482321",
       "text": "Could you please provide a few examples of enhancing customer value?",
       "isBot": true,
       "examples": [
@@ -25,11 +25,11 @@
       ]
     },
     {
-      "text": "Faster claim processing by a claims manager. Faster claim classification/segmentation by a claims manager.",
+      "text": "mplementing customer feedback loops. Offering personalized experiences based on customer data.",
       "isBot": false
     },
     {
-      "id": "1728043705547",
+      "id": "1728542494494",
       "text": "Could you please provide a few examples of achieving competitive advantage?",
       "isBot": true,
       "examples": [
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "text": "Faster claim processing by a claims manager. Faster claim classification/segmentation by a claims manager.",
+      "text": "mplementing customer feedback loops. Offering personalized experiences based on customer data.",
       "isBot": false
     }
   ]
